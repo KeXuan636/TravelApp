@@ -1,38 +1,140 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(20, 20, 50, 0.06);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 28px;
+  color: #2b6cb0;
+}
+
+.form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #dde;
+  font-size: 14px;
+}
+
+.input-name {
+  flex:1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 2px solid rgb(51, 82, 123);
+  font-size: 14px;
+}
+
+.input-qty {
+  padding: 10px 12px;
+  width: 30px;
+  border-radius: 8px;
+  border: 1px solid #dde;
+  font-size: 14px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #2b6cb0;
   color: white;
+  font-weight: 500;
 }
 
-.App-link {
-  color: #61dafb;
+.top-bar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #dde;
+  min-width: 200px;
+}
+
+.list {
+  margin-top: 8px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  background: white;
+  border: 1px solid #eef3f8;
+}
+
+.item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.itemText {
+  font-size: 15px;
+}
+
+.small-muted {
+  font-size: 12px;
+  color: #7a869a;
+}
+
+.controls button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #e53e3e;
+  color: white;
+  font-size: 13px;
+}
+
+.stats {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  align-items: center;
+  font-weight: 600;
+}
+
+.percent-box {
+  font-size: 16px;
+  color: #2b6cb0;
+
+}
+
+.footer {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid #eef3f8;
 }
