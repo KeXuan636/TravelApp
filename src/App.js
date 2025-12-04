@@ -17,14 +17,23 @@ function Form({ onAdd }) {
   const [quantity, setQuantity] = useState(1);
   const [description, setDescription] = useState('');
 
-  function submit(e){
+  function submit(e) {
     e.preventDefault();
-    if (!description.trim() || quantity <= 0) return;
 
-    onAdd({id: uid(), description: description.trim(), quantity: Number(quantity), packed: false});
+    if (!description.trim()) return;
+
+    const newItem = {
+      id: Date.now(),                
+      description: description.trim(),
+      quantity: Number(quantity),
+      packed: false,
+    };
+
+    onAdd(newItem);
+
     setDescription('');
     setQuantity(1);
-    }
+  }
 
   return (
     <form className="form" onSubmit={submit}>
@@ -78,8 +87,8 @@ function PackingList({items, onToggle, onDelete, filter, sort}){
     <div className="list">
       {shown.map(it => (
         <Item key={it.id} item={it} onToggle={onToggle} onDelete={onDelete} />
-    ))}
-  </div>
+      ))}
+    </div>
   );
 }
 
@@ -110,7 +119,6 @@ function App() {
       const raw = localStorage.getItem('my-travel-list');
       if (raw) {
         const parsed = JSON.parse(raw);
-        // If localStorage is empty array, return initialItems instead
         return parsed.length > 0 ? parsed : initialItems;
       } else {
         return initialItems;
